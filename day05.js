@@ -18,6 +18,8 @@ for (let line of lines.slice(2)) {
   }
 }
 maps.push(currMap);
+
+console.time('pt1');
 let min = Infinity;
 for (let val of seeds) {
   for (let map of maps) {
@@ -26,7 +28,9 @@ for (let val of seeds) {
   if (val < min) min = val;
 }
 console.log("Answer 1: " + min);
+console.timeEnd('pt1');
 
+console.time('pt2');
 min = Infinity;
 for (let i = 0; i < seeds.length; i += 2) {
   for (let j = seeds[i]; j < seeds[i] + seeds[i + 1]; j++) {
@@ -38,6 +42,7 @@ for (let i = 0; i < seeds.length; i += 2) {
   }
 }
 console.log("Answer 2: " + min);
+console.timeEnd('pt2');
 
 function translateFromMap(val, map) {
   for (let row of map) {
