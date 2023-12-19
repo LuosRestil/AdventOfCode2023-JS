@@ -40,8 +40,8 @@ while (queue.length) {
 console.log(
   "Answer 1: " + curr.cost
 );
-// fs.writeFileSync('out.json', JSON.stringify(curr));
 
+// fs.writeFileSync('out.json', JSON.stringify(curr));
 while (curr.from !== null) {
   grid[curr.row][curr.col] = dirSymbols[curr.dir];
   curr = curr.from;
